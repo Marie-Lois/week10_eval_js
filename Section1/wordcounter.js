@@ -10,12 +10,13 @@ function countCharacters(text){
 
 function countWords(text){
     let counts = 0
-    for(let i = 0; i < text.length; i++){
-        if (text[i] != " ") {
-            counts++
-        }
-    }
-    console.log(counts) 
+    let texts = text.split(" ")
+    // for(let i = 0; i < text.length; i++){
+    //     if (text[i] != " ") {
+    //         counts++
+    //     }
+    // }
+    console.log(texts.length) 
 }
 
 function countSpaces(text){
@@ -27,6 +28,18 @@ function countSpaces(text){
     }
     console.log(counts)
 }
+
+function wordCount(text) {
+    const words = text.split(" ")
+    return words.reduce((wordCounts, i) => {
+        wordCounts[i] = (wordCounts[i] || 0) + 1
+        console.log(wordCounts) 
+    }, {}) 
+}
+    
+
+
 //countCharacters(text)
 //countSpaces(text)
-countWords(text)
+//countWords(text)
+wordCount(text)
